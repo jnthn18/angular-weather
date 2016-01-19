@@ -12,14 +12,16 @@
   <h1>Ann Arbor, MI</h1>
 
   <div class="forecast">
-    <h3>{{ forecast[0].date.month }}/{{ forecast[0].date.day }}/{{forecast[0].date.year}} </h3>
+    <h3>{{ forecast[0].date.month }}/{{ forecast[0].date.day }}/{{forecast[0].date.year}}</h3>
+    <div>{{ forecast[0].conditions }}</div>
     <div>High: {{ forecast[0].high.fahrenheit }} &deg;F</div>
     <div>Low: {{ forecast[0].low.fahrenheit }} &deg;F</div>
   </div>
 
   <article class="container">
     <div class="forecast" ng-repeat="weather in forecast" ng-if="$index > 0">
-      <h3>{{ weather.date.month }}/{{ weather.date.day }}/{{weather.date.year}} </h3>
+      <h3>{{ weather.date.month }}/{{ weather.date.day }}/{{weather.date.year}}</h3>
+      <div>{{ weather.conditions }}</div>
       <div>High: {{ weather.high.fahrenheit }} &deg;F</div>
       <div>Low: {{ weather.low.fahrenheit }} &deg;F</div>
     </div>

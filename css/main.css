@@ -8,7 +8,7 @@ h1{
   font-weight: bold;
 }
 section.container{
-  max-width: 368px;
+  max-width: 450px;
   margin: auto;
   text-align: center;
 }
@@ -19,10 +19,13 @@ section.container{
   margin-bottom: 11px;
 }
 .forecast div:nth-child(2){
-  color: #e74c3c;
-  margin-bottom: 8px;
+  font-size: 1.15em;
 }
 .forecast div:nth-child(3){
+  color: #e74c3c;
+  margin: 8px 0px;
+}
+.forecast div:nth-child(4){
   color: #3498db;
 }
 article.container{
