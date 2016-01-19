@@ -3,17 +3,27 @@
 <head>
   <title>Weather App</title>
   <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Lato:700,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body ng-app="weatherApp">
-<section ng-controller="MainController">
+<section class="container" ng-controller="MainController">
   
-  <h1>Weather App</h1>
-  <div class="container" ng-repeat="weather in forecast">
-    <h3>{{ weather.date.month }}/{{ weather.date.day }}/{{weather.date.year}} </h3>
-    <div>High: {{ weather.high.fahrenheit }} &deg;F</div>
-    <div>Low: {{ weather.low.fahrenheit }} &deg;F</div>
-    <br />
+  <h1>AngularJS Weather App</h1>
+
+  <div class="forecast">
+    <h3>{{ forecast[0].date.month }}/{{ forecast[0].date.day }}/{{forecast[0].date.year}} </h3>
+    <div>High: {{ forecast[0].high.fahrenheit }} &deg;F</div>
+    <div>Low: {{ forecast[0].low.fahrenheit }} &deg;F</div>
   </div>
+
+  <article class="container">
+    <div class="forecast" ng-repeat="weather in forecast" ng-if="$index > 0">
+      <h3>{{ weather.date.month }}/{{ weather.date.day }}/{{weather.date.year}} </h3>
+      <div>High: {{ weather.high.fahrenheit }} &deg;F</div>
+      <div>Low: {{ weather.low.fahrenheit }} &deg;F</div>
+    </div>
+  </article>
 
 </section>
 
