@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather App</title>
+  <meta charset="UTF-8">
+</head>
+<body ng-app="weatherApp">
+<section ng-controller="MainController">
+  
+  <h1>Weather App</h1>
+  <div class="container" ng-repeat="weather in forecast">
+    <h3>{{ weather.date.month }}/{{ weather.date.day }}/{{weather.date.year}} </h3>
+    <div>High: {{ weather.high.fahrenheit }} &deg;F</div>
+    <div>Low: {{ weather.low.fahrenheit }} &deg;F</div>
+    <br />
+  </div>
+
+</section>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controllers/MainController.js"></script>
+<script type="text/javascript" src="js/services/weather.js"></script>
+</body>
+</html>
