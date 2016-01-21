@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Weather App</title>
+  <title>Weather</title>
   <meta charset="UTF-8">
   <link href='https://fonts.googleapis.com/css?family=Lato:700,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -9,12 +9,15 @@
 <body ng-app="weatherApp">
 <section class="container" ng-controller="MainController">
   
-  <h1>{{location}}</h1>
 
-  <form>
-    <input type="text" ng-model="location" ng-model-options="{ updateOn: 'blur'}">
-    <button ng-click="newLocation(location)">Submit</button>
-  </form>
+  
+
+  <h1 ng-dblclick="startEditing(location);">
+    <span ng-hide="location.editing">{{location.name}}</span>
+    <form ng-submit="doneEditing(location)" ng-show="location.editing">
+      <input type="text" ng-model="location.name" ng-blur="doneEditing(location)">
+    </form>
+  </h1>
 
   <div class="forecast">
     <h3>{{ forecast[0].date.month }}/{{ forecast[0].date.day }}/{{forecast[0].date.year}}</h3>
